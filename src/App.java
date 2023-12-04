@@ -1,7 +1,10 @@
-import com.config.cConfig;
+
+import com.loginandsignup.Login;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        cConfig.connection();
+        Login login = new Login();
+        login.setVisible(true);
+        // cConfig.connection();
     }
 }
