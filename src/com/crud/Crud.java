@@ -1,14 +1,20 @@
 package com.crud;
 
+
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.JOptionPane;
 
 import com.config.cConfig;
+import com.game.*;
 
 
 
 public class Crud {
+    private static String getNameAfterLogin;
+    private static String getName2ndPlayer;
    public static boolean cekRegsit(String userName, String pass) {
         cConfig.connection();
         boolean foundResult = false;
@@ -81,7 +87,7 @@ public class Crud {
                     JOptionPane.showMessageDialog(null, "Berhasil Login");
                     found = true;
                     foundResult = true;
-                    // cConfig.getParams(userName);
+                    getNameAfterLogin = userName;
                     // scorePast = resultSet.getInt("highScore");
                    
                     break; // Keluar dari loop karena sudah ditemukan kecocokan
@@ -98,5 +104,92 @@ public class Crud {
             System.err.println("Gagal");
         }
         return foundResult;
+    }
+
+     public static boolean find2ndPlayer(String userName, String pass) {
+        cConfig.connection();
+        boolean foundResult = false;
+        try {
+            cConfig.statement = cConfig.connect.createStatement();
+            String query = "SELECT * FROM ponggame";
+            cConfig.resultSet = cConfig.statement.executeQuery(query);
+
+            boolean found = false;
+
+            while (cConfig.resultSet.next()) {
+                if (userName.equals(cConfig.resultSet.getString("Username"))
+                        && pass.equals(cConfig.resultSet.getString("Password"))) {
+                    JOptionPane.showMessageDialog(null, "Berhasil Login");
+                    found = true;
+                    foundResult = true;
+                    getName2ndPlayer = userName;
+                    // scorePast = resultSet.getInt("highScore");
+                   
+                    break; // Keluar dari loop karena sudah ditemukan kecocokan
+
+                }
+            }
+
+            if (!found) {
+                JOptionPane.showMessageDialog(null, "Username Atau Password Salah");
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.err.println("Gagal");
+        }
+        return foundResult;
+    }
+    public static String getName(){
+        return getNameAfterLogin;
+    }
+    public static String getName2ndPlayer(){
+        return getName2ndPlayer;
+    }
+
+    public static void addProfileData(String name) {
+        cConfig.connection();
+
+        try  {
+            String query = "SELECT * FROM ponggame WHERE Username = ?";
+            PreparedStatement statement = cConfig.connect.prepareStatement(query);
+            statement.setString(1, name);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+
+                ExampleForLoby.getDataProfile(resultSet.getString("Username"));
+                      
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+     public static void add2ndPlayer(String name) {
+        cConfig.connection();
+
+        try  {
+            String query = "SELECT * FROM ponggame WHERE Username = ?";
+            PreparedStatement statement = cConfig.connect.prepareStatement(query);
+            statement.setString(1, name);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+
+                ExampleForLoby.get2ndPlayer(resultSet.getString("Username"));
+                      
+
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
     }
 }
