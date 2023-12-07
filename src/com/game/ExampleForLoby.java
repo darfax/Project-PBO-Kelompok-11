@@ -1,6 +1,6 @@
 package com.game;
 
-import com.crud.Crud;
+
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -42,7 +42,7 @@ public class ExampleForLoby extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -215,7 +215,7 @@ public class ExampleForLoby extends javax.swing.JFrame {
 
     // Variables declaration - do not modify
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+  
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;

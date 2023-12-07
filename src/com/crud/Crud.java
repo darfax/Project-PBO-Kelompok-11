@@ -117,6 +117,11 @@ public class Crud {
             boolean found = false;
 
             while (cConfig.resultSet.next()) {
+                if(userName.equals(getName())){
+                    found = true;
+                    JOptionPane.showMessageDialog(null, "Player Sudah Ada");
+                    break;
+                }
                 if (userName.equals(cConfig.resultSet.getString("Username"))
                         && pass.equals(cConfig.resultSet.getString("Password"))) {
                     JOptionPane.showMessageDialog(null, "Berhasil Login");

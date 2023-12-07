@@ -2,7 +2,7 @@
 package com.game;
 
 import com.crud.Crud;
-import com.game.Loby;
+
 import com.loginandsignup.*;
 public class Login2ndPlayer extends javax.swing.JFrame {
 
