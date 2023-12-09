@@ -2,7 +2,7 @@
 package com.loginandsignup;
 
 import com.crud.Crud;
-import com.game.Loby;
+import com.game.StartScreen;
 public class Login extends javax.swing.JFrame {
 
     public Login() {
@@ -140,9 +140,10 @@ public class Login extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
         if (Crud.cekForm(usernameInput.getText(), String.valueOf(passwordInput.getPassword()))) {
-                Loby loby = new Loby();
+                StartScreen loby = new StartScreen();
                 loby.setLocationRelativeTo(null);
                 loby.setVisible(true); 
+                loby.pack();
         }
 
     }
