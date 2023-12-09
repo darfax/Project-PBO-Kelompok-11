@@ -1,11 +1,12 @@
 
-package com.loginandsignup;
+package com.game;
 
 import com.crud.Crud;
-import com.game.StartScreen;
-public class Login extends javax.swing.JFrame {
 
-    public Login() {
+import com.loginandsignup.*;
+public class Login2ndPlayer extends javax.swing.JFrame {
+
+    public Login2ndPlayer() {
         initComponents();
     }
 
@@ -139,11 +140,12 @@ public class Login extends javax.swing.JFrame {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        if (Crud.cekForm(usernameInput.getText(), String.valueOf(passwordInput.getPassword()))) {
-                StartScreen loby = new StartScreen();
-                loby.setLocationRelativeTo(null);
-                loby.setVisible(true); 
-                loby.pack();
+        if (Crud.find2ndPlayer(usernameInput.getText(), String.valueOf(passwordInput.getPassword()))) {
+                Crud.add2ndPlayer(Crud.getName2ndPlayer());
+                ExampleForLoby exampleForLoby = new ExampleForLoby();
+                exampleForLoby.setLocationRelativeTo(null);
+                exampleForLoby.setVisible(true);
+                this.dispose();
         }
 
     }
