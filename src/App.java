@@ -7,5 +7,6 @@ public class App {
         login.setLocationRelativeTo(null);
         login.setVisible(true);
         // cConfig.connection();
+        System.out.println("Hello, World!");
     }
 }
