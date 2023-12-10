@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 05, 2023 at 07:28 AM
+-- Generation Time: Dec 10, 2023 at 10:12 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.0.28
 
@@ -30,16 +30,18 @@ SET time_zone = "+00:00";
 CREATE TABLE `ponggame` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `password` varchar(30) NOT NULL
+  `password` varchar(30) NOT NULL,
+  `pathPhoto` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `ponggame`
 --
 
-INSERT INTO `ponggame` (`id`, `username`, `password`) VALUES
-(1, 'adinmm', '123'),
-(4, 'adin', '1');
+INSERT INTO `ponggame` (`id`, `username`, `password`, `pathPhoto`) VALUES
+(7, 'adin', '123', 'D:\\PRAKTIKUM PBO\\Project-PBO-Kelompok-11\\src\\upload\\adin.jpg'),
+(8, 'yuan', 'yuan', 'D:\\PRAKTIKUM PBO\\Project-PBO-Kelompok-11\\src\\upload\\yuan.jpg'),
+(9, 'ajik', 'kontol', 'D:\\PRAKTIKUM PBO\\Project-PBO-Kelompok-11\\src\\upload\\ajik.jpg');
 
 --
 -- Indexes for dumped tables
@@ -59,7 +61,7 @@ ALTER TABLE `ponggame`
 -- AUTO_INCREMENT for table `ponggame`
 --
 ALTER TABLE `ponggame`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
