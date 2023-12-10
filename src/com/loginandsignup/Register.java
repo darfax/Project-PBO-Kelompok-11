@@ -156,7 +156,7 @@ public class Register extends javax.swing.JFrame {
     }
 
     private void loginBtnActionPerformed(java.awt.event.ActionEvent evt) {
-        Login LoginFrame = new Login();
+        Login1 LoginFrame = new Login1();
         LoginFrame.setVisible(true);
         LoginFrame.pack();
         LoginFrame.setLocationRelativeTo(null);
@@ -178,7 +178,7 @@ public class Register extends javax.swing.JFrame {
                 return;
             } else if (!Crud.cekRegsit(username, password)) {
                 Crud.tambahData(username, confirmPass);
-                Login log = new Login();
+                Login1 log = new Login1();
                 log.setLocationRelativeTo(null);
                 log.setVisible(true);
                 this.dispose();

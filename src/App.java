@@ -1,10 +1,9 @@
-import com.game.StartScreen;
+import com.loginandsignup.Login;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        StartScreen play = new StartScreen();
-        play.setLocationRelativeTo(null);
-        play.setVisible(true);
-        // cConfig.connection();
+        Login login = new Login();
+        login.setLocationRelativeTo(null);
+        login.setVisible(true);
     }
 }

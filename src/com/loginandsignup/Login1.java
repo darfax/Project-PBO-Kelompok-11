@@ -1,12 +1,11 @@
-
-package com.game;
+        
+package com.loginandsignup;
 
 import com.crud.Crud;
+import com.game.StartScreen;
+public class Login1 extends javax.swing.JFrame {
 
-import com.loginandsignup.*;
-public class Login2ndPlayer extends javax.swing.JFrame {
-
-    public Login2ndPlayer() {
+    public Login1() {
         initComponents();
     }
 
@@ -120,7 +119,7 @@ public class Login2ndPlayer extends javax.swing.JFrame {
         Left.setBounds(0, 0, 400, 500);
 
         jLabel8.setIcon(new javax.swing.ImageIcon(
-                getClass().getResource("/Icon/javier-martinez-hUD0PUczwJQ-unsplash (1).jpg"))); // NOI18N
+                getClass().getResource("/Icon/wallpaperflare.com_wallpaper.jpg"))); // NOI18N
         jLabel8.setText("jLabel8");
         jPanel1.add(jLabel8);
         jLabel8.setBounds(90, -30, 800, 533);
@@ -140,12 +139,11 @@ public class Login2ndPlayer extends javax.swing.JFrame {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {
-        if (Crud.find2ndPlayer(usernameInput.getText(), String.valueOf(passwordInput.getPassword()))) {
-                Crud.add2ndPlayer(Crud.getName2ndPlayer());
-                ExampleForLoby exampleForLoby = new ExampleForLoby();
-                exampleForLoby.setLocationRelativeTo(null);
-                exampleForLoby.setVisible(true);
-                this.dispose();
+        if (Crud.cekForm(usernameInput.getText(), String.valueOf(passwordInput.getPassword()))) {
+                StartScreen loby = new StartScreen();
+                loby.setLocationRelativeTo(null);
+                loby.setVisible(true); 
+                loby.pack();
         }
 
     }
