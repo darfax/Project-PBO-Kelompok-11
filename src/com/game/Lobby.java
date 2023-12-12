@@ -5,6 +5,7 @@ package com.game;
  */
 
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import java.awt.*;
 
@@ -200,11 +201,13 @@ public class Lobby extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonSettingsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSettingsActionPerformed
-        // TODO add your handling code here:
+        Setting setting = new Setting();
+        setting.setLocationRelativeTo(null);
+        setting.setVisible(true);
     }//GEN-LAST:event_jButtonSettingsActionPerformed
 
     private void jButtonStartActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonStartActionPerformed
-        // TODO add your handling code here:
+       JOptionPane.showMessageDialog(null, "Game Started");
     }//GEN-LAST:event_jButtonStartActionPerformed
 
     private void jButtonLoginP2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLoginP2ActionPerformed
