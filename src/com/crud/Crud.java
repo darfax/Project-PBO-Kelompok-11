@@ -15,7 +15,7 @@ import com.game.*;
 public class Crud {
     private static String getNameAfterLogin;
     private static String getName2ndPlayer;
-    private static String defaultPhoto = "D:\\PRAKTIKUM PBO\\Project-PBO-Kelompok-11\\src\\upload\\customer.png";
+    private static String defaultPhoto = "src\\upload\\customer.jpg";
    public static boolean cekRegsit(String userName, String pass) {
         cConfig.connection();
         boolean foundResult = false;
@@ -168,6 +168,7 @@ public class Crud {
 
                 // ExampleForLoby.getDataProfile(resultSet.getString("Username"));
                 Profile.getDataProfile(resultSet.getString("Username"), resultSet.getString("pathPhoto"));
+                Lobby.getDataProfile(resultSet.getString("Username"), resultSet.getString("pathPhoto"));
                       
 
             }
@@ -190,7 +191,7 @@ public class Crud {
 
             while (resultSet.next()) {
 
-                ExampleForLoby.get2ndPlayer(resultSet.getString("Username"));
+                Lobby.get2ndPlayer(resultSet.getString("Username"), resultSet.getString("pathPhoto"));
                       
 
             }
