@@ -15,7 +15,6 @@ import com.game.*;
 public class Crud {
     private static String getNameAfterLogin;
     private static String getName2ndPlayer;
-    private static String getPath2ndPlayer;
     private static String defaultPhoto = "D:\\PRAKTIKUM PBO\\Project-PBO-Kelompok-11\\src\\upload\\customer.png";
    public static boolean cekRegsit(String userName, String pass) {
         cConfig.connection();
@@ -131,7 +130,6 @@ public class Crud {
                     found = true;
                     foundResult = true;
                     getName2ndPlayer = userName;
-                    getPath2ndPlayer = cConfig.resultSet.getString("pathPhoto");
                     // scorePast = resultSet.getInt("highScore");
                    
                     break; // Keluar dari loop karena sudah ditemukan kecocokan
@@ -155,9 +153,6 @@ public class Crud {
     public static String getName2ndPlayer(){
         return getName2ndPlayer;
     }
-    public static String getPath2ndPlayer(){
-        return getPath2ndPlayer;
-    }
 
     public static void addProfileData(String name) {
         cConfig.connection();
@@ -173,7 +168,6 @@ public class Crud {
 
                 // ExampleForLoby.getDataProfile(resultSet.getString("Username"));
                 Profile.getDataProfile(resultSet.getString("Username"), resultSet.getString("pathPhoto"));
-                Lobby.getDataProfile(resultSet.getString("Username"), resultSet.getString("pathPhoto"));
                       
 
             }
@@ -196,7 +190,7 @@ public class Crud {
 
             while (resultSet.next()) {
 
-                Lobby.get2ndPlayer(resultSet.getString("Username"), resultSet.getString("pathPhoto"));
+                ExampleForLoby.get2ndPlayer(resultSet.getString("Username"));
                       
 
             }

@@ -40,13 +40,13 @@ public class StartScreen extends javax.swing.JFrame {
 
     private void jButtonEnterGameActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButtonEnterGameActionPerformed
         Crud.addProfileData(Crud.getName());
-        // Profile profile = new Profile();
-        // profile.setLocationRelativeTo(null);
-        // profile.setVisible(true);
-        Lobby lobby = new Lobby();
-        lobby.setVisible(true);
-        lobby.pack();
-        lobby.setLocationRelativeTo(null);
+        Profile profile = new Profile();
+        profile.setLocationRelativeTo(null);
+        profile.setVisible(true);
+        // Lobby lobby = new Lobby();
+        // lobby.setVisible(true);
+        // lobby.pack();
+        // lobby.setLocationRelativeTo(null);
         this.dispose();
     }// GEN-LAST:event_jButtonEnterGameActionPerformed
 
