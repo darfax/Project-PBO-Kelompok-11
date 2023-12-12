@@ -185,8 +185,6 @@ public class Register extends javax.swing.JFrame {
             }
         }
 
-        System.out.println(username + password + confirmPass);
-
     }
 
     /**

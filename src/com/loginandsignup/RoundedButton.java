@@ -18,7 +18,7 @@ import javax.swing.JButton;
             this.hoverColor = new Color(100, 130, 220);
             this.pressedColor = new Color(60, 90, 180);
             setForeground(Color.WHITE);
-            setFont(new Font("Segoe UI", Font.BOLD, 14));
+            setFont(new Font("Segoe UI", Font.BOLD, 12));
     
             // Tambahkan listener untuk merubah warna ketika hover atau klik
             addMouseListener(new java.awt.event.MouseAdapter() {
