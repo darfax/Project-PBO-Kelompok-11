@@ -28,6 +28,7 @@ public class StartScreen extends javax.swing.JFrame {
         jButtonProfile = new javax.swing.JButton();
         jButtonPlay = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        jButtonLeaderboards = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -45,7 +46,7 @@ public class StartScreen extends javax.swing.JFrame {
                 jButtonProfileActionPerformed(evt);
             }
         });
-        getContentPane().add(jButtonProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 10, 110, 80));
+        getContentPane().add(jButtonProfile, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 20, 110, 50));
 
         jButtonPlay.setBackground(new java.awt.Color(229, 221, 210));
         jButtonPlay.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -65,6 +66,18 @@ public class StartScreen extends javax.swing.JFrame {
         jLabel1.setText("TMD");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 20, 400, 200));
 
+        jButtonLeaderboards.setBackground(new java.awt.Color(229, 221, 210));
+        jButtonLeaderboards.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jButtonLeaderboards.setForeground(new java.awt.Color(80, 61, 66));
+        jButtonLeaderboards.setIcon(new javax.swing.ImageIcon("C:\\Users\\Legion 5\\Downloads\\icons8-leaderboard-24.png")); // NOI18N
+        jButtonLeaderboards.setText("Leaderboards");
+        jButtonLeaderboards.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonLeaderboardsActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonLeaderboards, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 151, 50));
+
         jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Legion 5\\Downloads\\Frame 2.png")); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 500));
 
@@ -79,6 +92,10 @@ public class StartScreen extends javax.swing.JFrame {
     private void jButtonProfileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonProfileActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButtonProfileActionPerformed
+
+    private void jButtonLeaderboardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLeaderboardsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButtonLeaderboardsActionPerformed
 
     /**
      * @param args the command line arguments
@@ -116,6 +133,7 @@ public class StartScreen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonLeaderboards;
     private javax.swing.JButton jButtonPlay;
     private javax.swing.JButton jButtonProfile;
     private javax.swing.JLabel jLabel1;
