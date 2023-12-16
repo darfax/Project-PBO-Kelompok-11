@@ -27,6 +27,10 @@ public class Profile extends javax.swing.JFrame {
     private String fileName = "";
     private static String userNameProfile;
     private static String defaultPath;
+
+    private static int score;
+    private static int win;
+
     private int getWidth;
     private int getHeight;
 
@@ -87,7 +91,7 @@ public class Profile extends javax.swing.JFrame {
         usernameProfile.setText(userNameProfile);
 
         highScore.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        highScore.setText("High Score");
+        highScore.setText("High Score : "+score);
 
             RoundedButton addBtn = new RoundedButton("Change Photo");
             addBtn.setBorderPainted(false);
@@ -101,7 +105,7 @@ public class Profile extends javax.swing.JFrame {
 
         totalTrophy.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         totalTrophy.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        totalTrophy.setText("10");
+        totalTrophy.setText(String.valueOf(win));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -207,9 +211,11 @@ public class Profile extends javax.swing.JFrame {
         }
     }
 
-    public static void getDataProfile(String nama, String path) {
+    public static void getDataProfile(String nama, String path, int highScore, int totalWin) {
         userNameProfile = nama;
         defaultPath = path;
+        score = highScore;
+        win = totalWin;
     }
 
     /**
