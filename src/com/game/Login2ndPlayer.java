@@ -37,7 +37,7 @@ public class Login2ndPlayer extends javax.swing.JFrame {
                 jPasswordFieldPass = new javax.swing.JPasswordField();
                 jLabel1 = new javax.swing.JLabel();
 
-                setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+                setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
                 getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
                 jPanel1.setBackground(new java.awt.Color(255, 255, 255));

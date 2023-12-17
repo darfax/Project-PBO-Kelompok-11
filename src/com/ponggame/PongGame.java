@@ -15,6 +15,7 @@ import java.awt.*;
 public class PongGame extends javax.swing.JFrame {
     GamePanel panel;
     Score score;
+    public String pathBg = "src\\Icon\\bgforpong.jpg";
     
     /**
      * Creates new form PongGame
@@ -38,7 +39,7 @@ public class PongGame extends javax.swing.JFrame {
 
         });
 
-        this.setTitle("Pong Game");
+        this.setTitle("TMD");
         this.setResizable(false);
         this.setBackground(Color.BLACK);
         // this.setBackground(new Color(34, 139, 34));
@@ -146,6 +147,15 @@ public class PongGame extends javax.swing.JFrame {
         // });
         // GamePanel.countdownThread.start();
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 30, -1, -1));
+
+         SwingUtilities.invokeLater(() -> {
+                ImageIcon bgGame = new ImageIcon(pathBg.toString());
+                Image img = bgGame.getImage().getScaledInstance(jLabel7.getWidth(), jLabel7.getHeight(),
+                        Image.SCALE_SMOOTH);
+                ImageIcon ic = new ImageIcon(img);
+                jLabel7.setIcon(ic);
+
+            });
 
         // jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("Icon/3540662.jpg"))); // NOI18N
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -3, 1180, 750));
