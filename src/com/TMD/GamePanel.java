@@ -41,7 +41,7 @@ public class GamePanel extends JPanel implements Runnable {
 	public static String getColorp1;
 	public static String getColorp2;
 
-	private static TMD pongGameInstance;
+	private static TMD TMDInstance;
 
 	GamePanel() {
 		startGame();
@@ -214,16 +214,16 @@ public class GamePanel extends JPanel implements Runnable {
 		}
 	}
 
-	public static void setPongGameInstance(TMD pongGame) {
-		pongGameInstance = pongGame;
+	public static void setTMDInstance(TMD TMD) {
+		TMDInstance = TMD;
 	}
 
 	public static void closed() {
-		if (pongGameInstance != null) {
+		if (TMDInstance != null) {
 			getColorp1 = "";
 			getColorp2 = "";
 			GamePanel.countdown = 0;
-			pongGameInstance.dispose();
+			TMDInstance.dispose();
 		}
 		System.out.println("method berjalan");
 	}

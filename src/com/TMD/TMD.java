@@ -17,13 +17,13 @@ public class TMD extends javax.swing.JFrame {
 
     private void initComponents() {
         panel = new GamePanel();
-        GamePanel.setPongGameInstance(this);
+        GamePanel.setTMDInstance(this);
         SwingUtilities.invokeLater(() -> {
             System.out.println(GamePanel.countdown);
 
         });
 
-        this.setTitle("Pong Game");
+        this.setTitle("TMD");
         this.setResizable(false);
         this.setBackground(Color.BLACK);
         // this.setBackground(new Color(34, 139, 34));
