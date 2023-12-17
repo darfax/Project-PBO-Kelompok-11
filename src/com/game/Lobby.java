@@ -82,7 +82,7 @@ public class Lobby extends javax.swing.JFrame {
             SwingUtilities.invokeLater(() -> {
                 ImageIcon player1 = new ImageIcon(pathDefault.toString());
                 Image img1 = player1.getImage().getScaledInstance(jLabel3.getWidth(), jLabel3.getHeight(),
-                        Image.SCALE_DEFAULT);
+                        Image.SCALE_SMOOTH);
                 ImageIcon ic1 = new ImageIcon(img1);
                 jLabel3.setIcon(ic1);
 
@@ -96,7 +96,7 @@ public class Lobby extends javax.swing.JFrame {
             SwingUtilities.invokeLater(() -> {
                 ImageIcon player1 = new ImageIcon(photosPlayer1.toString());
                 Image img = player1.getImage().getScaledInstance(jLabelFotoP1.getWidth(), jLabelFotoP1.getHeight(),
-                        Image.SCALE_DEFAULT);
+                        Image.SCALE_SMOOTH);
                 ImageIcon ic = new ImageIcon(img);
                 jLabelFotoP1.setIcon(ic);
 
@@ -138,7 +138,7 @@ public class Lobby extends javax.swing.JFrame {
             SwingUtilities.invokeLater(() -> {
                 ImageIcon player2 = new ImageIcon(pathDefault.toString());
                 Image img = player2.getImage().getScaledInstance(jLabelFotoP2.getWidth(), jLabelFotoP2.getHeight(),
-                        Image.SCALE_DEFAULT);
+                        Image.SCALE_SMOOTH);
                 ImageIcon ic = new ImageIcon(img);
                 jLabelFotoP2.setIcon(ic);
 
@@ -152,7 +152,7 @@ public class Lobby extends javax.swing.JFrame {
             SwingUtilities.invokeLater(() -> {
                 ImageIcon player2 = new ImageIcon(photosPlayer2.toString());
                 Image img = player2.getImage().getScaledInstance(jLabelFotoP2.getWidth(), jLabelFotoP2.getHeight(),
-                        Image.SCALE_DEFAULT);
+                        Image.SCALE_SMOOTH);
                 ImageIcon ic = new ImageIcon(img);
                 jLabelFotoP2.setIcon(ic);
 
@@ -224,10 +224,11 @@ public class Lobby extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonSettingsActionPerformed
 
     private void jButtonBackActionPerformed(java.awt.event.ActionEvent evt) {
+        Setting.isSaved = false;
         StartScreen start = new StartScreen();
                         start.setLocationRelativeTo(null);
                         start.setVisible(true);
-                        start.pack();
+                        
                         this.dispose();
     }
 

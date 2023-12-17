@@ -11,7 +11,10 @@ import javax.swing.JOptionPane;
  * @author Legion 5
  */
 public class Setting extends javax.swing.JFrame {
-
+public static int waktu;
+public static String paddle1;
+public static String paddle2;
+public static boolean isSaved;
     /**
      * Creates new form Setting
      */
@@ -70,7 +73,7 @@ public class Setting extends javax.swing.JFrame {
 
         jComboBox3.setBackground(new java.awt.Color(229, 221, 210));
         jComboBox3.setForeground(new java.awt.Color(80, 61, 66));
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Green", "Blue", "Blue" }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Green", "Blue", "Red" }));
         jComboBox3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox3ActionPerformed(evt);
@@ -162,7 +165,27 @@ public class Setting extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JOptionPane.showMessageDialog(null, "Setting Saved");
+        String playTime = jComboBox1.getSelectedItem().toString();
+        if(playTime.equals("00:30")){
+            waktu = 30;
+        }else if(playTime.equals("01:00")){
+            waktu = 60;
+        }else if(playTime.equals("05:00")){
+            waktu = 300;
+        }
+        String paddleColorP1 = jComboBox2.getSelectedItem().toString();
+        String paddleColorP2 = jComboBox3.getSelectedItem().toString();
+        
+        paddle1 = paddleColorP1;
+        paddle2 = paddleColorP2;
+
+        // Lakukan tindakan dengan nilai yang telah diambil dari JComboBox di sini
+        // Contoh: Tampilkan nilai yang diambil ke dalam JOptionPane
+        String message = "Play Time: " + waktu + "\n"
+                       + "Paddle Color (P1): " + paddleColorP1 + "\n"
+                       + "Paddle Color (P2): " + paddleColorP2;
+        JOptionPane.showMessageDialog(null, message);
+        isSaved = true;
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 

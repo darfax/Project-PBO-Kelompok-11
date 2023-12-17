@@ -7,6 +7,7 @@ import javax.swing.*;
 
 import com.crud.Crud;
 import com.game.Lobby;
+import com.game.Setting;
 
 public class GamePanel extends JPanel implements Runnable {
 
@@ -38,6 +39,9 @@ public class GamePanel extends JPanel implements Runnable {
 	public static int winPastP1;
 	public static int winPastP2;
 
+	public static String getColorp1;
+	public static String getColorp2;
+
 	private static PongGame pongGameInstance;
 
 	GamePanel() {
@@ -49,12 +53,24 @@ public class GamePanel extends JPanel implements Runnable {
 		JOptionPane.showMessageDialog(null, "Game Start");
 		Crud.setScoreAndWinPastP1(Lobby.usernamePlayer1);
 		Crud.setScoreAndWinPastP2(Lobby.usernamePlayer2);
-		// stopGameThread();
-		GamePanel.countdown = 10;
+		System.out.println(Setting.isSaved);
+		if (Setting.isSaved) {
+			getColorp1 = Setting.paddle1;
+			getColorp2 = Setting.paddle2;
+			GamePanel.countdown = Setting.waktu;
+		} else {
+			getColorp1 = "Blue";
+			System.out.println(getColorp1);
+			getColorp2 = "Red";
+			// stopGameThread();
+			// if (Setting.waktu == 0) {
+			// Setting.waktu = 60;
+			// }
+			GamePanel.countdown = 60;
+		}
 		gameRunning = true;
 		running = true;
 		moveBol = true;
-		
 
 		Score.player1 = 0;
 		Score.player2 = 0;
@@ -212,6 +228,9 @@ public class GamePanel extends JPanel implements Runnable {
 
 	public static void closed() {
 		if (pongGameInstance != null) {
+			getColorp1 = "";
+			getColorp2 = "";
+			GamePanel.countdown = 0;
 			pongGameInstance.dispose();
 		}
 		System.out.println("method berjalan");

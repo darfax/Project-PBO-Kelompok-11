@@ -81,7 +81,7 @@ public class Profile extends javax.swing.JFrame {
             getHeight = photos.getHeight();
             ImageIcon icon1 = new ImageIcon(defaultPath.toString());
             Image img = icon1.getImage().getScaledInstance(getWidth, getHeight,
-            Image.SCALE_DEFAULT);
+            Image.SCALE_SMOOTH);
             ImageIcon ic = new ImageIcon(img);
             photos.setIcon(ic);
 
@@ -181,7 +181,7 @@ public class Profile extends javax.swing.JFrame {
             chooser.showOpenDialog(null);
             File f = chooser.getSelectedFile();
             ImageIcon icon = new ImageIcon(f.toString());
-            Image img = icon.getImage().getScaledInstance(photos.getWidth(), photos.getHeight(), Image.SCALE_DEFAULT);
+            Image img = icon.getImage().getScaledInstance(photos.getWidth(), photos.getHeight(), Image.SCALE_SMOOTH);
             ImageIcon ic = new ImageIcon(img);
             photos.setIcon(ic);
             this.fileName = f.getAbsolutePath();

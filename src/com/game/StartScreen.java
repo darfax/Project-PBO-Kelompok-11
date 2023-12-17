@@ -90,6 +90,7 @@ public class StartScreen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonLeaderboardsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLeaderboardsActionPerformed
+        Crud.showLeaderboard();
         Leaderboard leaderboard = new Leaderboard();
         leaderboard.setLocationRelativeTo(null);
         leaderboard.setVisible(true);

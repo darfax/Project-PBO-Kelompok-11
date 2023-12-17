@@ -75,12 +75,12 @@ public class PongGame extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText(Lobby.usernamePlayer1);
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 120, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 100, -1));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText(Lobby.usernamePlayer2);
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 120, 120, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 120, 100, -1));
 
         jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -92,12 +92,12 @@ public class PongGame extends javax.swing.JFrame {
         SwingUtilities.invokeLater(() -> {
                 ImageIcon player1 = new ImageIcon(Lobby.photosPlayer1.toString());
                 Image img = player1.getImage().getScaledInstance(jLabel4.getWidth(), jLabel4.getHeight(),
-                        Image.SCALE_DEFAULT);
+                        Image.SCALE_SMOOTH);
                 ImageIcon ic = new ImageIcon(img);
                 jLabel4.setIcon(ic);
 
             });
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 120, 97));
+        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 100, 100));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -119,12 +119,13 @@ public class PongGame extends javax.swing.JFrame {
          SwingUtilities.invokeLater(() -> {
                 ImageIcon player2 = new ImageIcon(Lobby.photosPlayer2.toString());
                 Image img = player2.getImage().getScaledInstance(jLabel6.getWidth(), jLabel6.getHeight(),
-                        Image.SCALE_DEFAULT);
+                        Image.SCALE_SMOOTH);
                 ImageIcon ic = new ImageIcon(img);
                 jLabel6.setIcon(ic);
+                System.out.println("lebar : " + jLabel6.getWidth() + " tinggi : " + jLabel6.getHeight());
 
             });
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 20, 120, 97));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 20, 100, 100));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -182,7 +183,7 @@ public class PongGame extends javax.swing.JFrame {
         /*
          * If Nimbus (introduced in Java SE 6) is not available, stay with the default
          * look and feel.
-         * For details see
+         * For details sees
          * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {

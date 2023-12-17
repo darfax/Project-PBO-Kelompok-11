@@ -11,10 +11,16 @@ import com.game.*;
 import com.ponggame.GamePanel;
 
 public class Crud {
+    public static int totalData;
     private static String getNameAfterLogin;
     private static String getName2ndPlayer;
     private static String defaultPhoto = "src\\upload\\customer.jpg";
-
+    public static String[] AllPath = new String[5];
+    public static String[] AllName = new String[5];
+    public static int[] AllWin = new int[5];
+    public static int pathCount = 0;
+    public static int nameCount = 0;
+    public static int winCount = 0;
   
 
 
@@ -309,5 +315,39 @@ public class Crud {
             JOptionPane.showMessageDialog(null, "Gagal");
         }
 
+    }
+
+    public static void showLeaderboard() {
+        cConfig.connection();
+        try {
+            String query = "SELECT * FROM ponggame ORDER BY totalWin DESC";
+            cConfig.statement = cConfig.connect.createStatement();
+            ResultSet resultSet = cConfig.statement.executeQuery(query);
+            while (resultSet.next()) {
+                AllPath[pathCount++] = resultSet.getString("pathPhoto");
+                AllName[nameCount++] = resultSet.getString("Username");
+                AllWin[winCount++] = resultSet.getInt("totalWin");
+                // data[countLeaderboard++] = (number++) + ". " + resultSet.getString("Username") + " Score : " + resultSet.getInt("highScore") + "\n";
+                // System.out.println(AllName[5]);
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+       
+    }
+
+    public static void getDatafromDatabase(){
+        cConfig.connection();
+        try {
+            String query = "SELECT COUNT(*) AS totalWin FROM ponggame"; 
+            cConfig.statement = cConfig.connect.createStatement();
+            ResultSet resultSet = cConfig.statement.executeQuery(query);
+            if (resultSet.next()) {
+                totalData = resultSet.getInt("totalWin");
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+        
     }
 }
