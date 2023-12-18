@@ -11,7 +11,7 @@ class User {
     private String username;
     private int wins;
     private ImageIcon photo;
-    public static String icon = "D:\\PRAKTIKUM PBO\\Project-PBO-Kelompok-11\\src\\Icon\\trophy.png";
+    public static String icon = "src\\Icon\\trophy.png";
 
     public User(String username, int wins, String photoPath) {
         this.username = username;

@@ -10,7 +10,8 @@ import com.game.Lobby;
 public class TMD extends javax.swing.JFrame {
     GamePanel panel;
     Score score;
-    
+    public String pathGame = "src\\Icon\\bgforpong.jpg";
+
     public TMD() {
         initComponents();
     }
@@ -75,13 +76,14 @@ public class TMD extends javax.swing.JFrame {
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText(Lobby.photosPlayer1);
         SwingUtilities.invokeLater(() -> {
-                ImageIcon player1 = new ImageIcon(Lobby.photosPlayer1.toString());
-                Image img = player1.getImage().getScaledInstance(jLabel4.getWidth(), jLabel4.getHeight(),
-                        Image.SCALE_SMOOTH);
-                ImageIcon ic = new ImageIcon(img);
-                jLabel4.setIcon(ic);
+            ImageIcon player1 = new ImageIcon(Lobby.photosPlayer1.toString());
+            Image img = player1.getImage().getScaledInstance(jLabel4.getWidth(), jLabel4.getHeight(),
+                    Image.SCALE_SMOOTH);
+            ImageIcon ic = new ImageIcon(img);
+            jLabel4.setIcon(ic);
 
-            });
+        });
+
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 20, 100, 100));
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
@@ -101,15 +103,15 @@ public class TMD extends javax.swing.JFrame {
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText(Lobby.photosPlayer2);
-         SwingUtilities.invokeLater(() -> {
-                ImageIcon player2 = new ImageIcon(Lobby.photosPlayer2.toString());
-                Image img = player2.getImage().getScaledInstance(jLabel6.getWidth(), jLabel6.getHeight(),
-                        Image.SCALE_SMOOTH);
-                ImageIcon ic = new ImageIcon(img);
-                jLabel6.setIcon(ic);
-                System.out.println("lebar : " + jLabel6.getWidth() + " tinggi : " + jLabel6.getHeight());
+        SwingUtilities.invokeLater(() -> {
+            ImageIcon player2 = new ImageIcon(Lobby.photosPlayer2.toString());
+            Image img = player2.getImage().getScaledInstance(jLabel6.getWidth(), jLabel6.getHeight(),
+                    Image.SCALE_SMOOTH);
+            ImageIcon ic = new ImageIcon(img);
+            jLabel6.setIcon(ic);
+            System.out.println("lebar : " + jLabel6.getWidth() + " tinggi : " + jLabel6.getHeight());
 
-            });
+        });
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 20, 100, 100));
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -148,5 +150,4 @@ public class TMD extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     public static javax.swing.JLabel jLabel8;
 
-   
 }

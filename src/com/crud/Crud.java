@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 
 import com.config.cConfig;
 import com.game.*;
-import com.ponggame.GamePanel;
+import com.tmd.GamePanel;
 
 public class Crud {
     public static int totalData;
@@ -18,9 +18,9 @@ public class Crud {
     public static String[] AllPath = new String[5];
     public static String[] AllName = new String[5];
     public static int[] AllWin = new int[5];
-    public static int pathCount = 0;
-    public static int nameCount = 0;
-    public static int winCount = 0;
+    private static int pathCount = 0;
+    private static int nameCount = 0;
+    private static int winCount = 0;
   
 
 
@@ -319,14 +319,17 @@ public class Crud {
 
     public static void showLeaderboard() {
         cConfig.connection();
+        winCount = 0;
+        pathCount = 0;
+        nameCount = 0;
         try {
             String query = "SELECT * FROM ponggame ORDER BY totalWin DESC";
             cConfig.statement = cConfig.connect.createStatement();
             ResultSet resultSet = cConfig.statement.executeQuery(query);
             while (resultSet.next()) {
+                AllWin[winCount++] = resultSet.getInt("totalWin");
                 AllPath[pathCount++] = resultSet.getString("pathPhoto");
                 AllName[nameCount++] = resultSet.getString("Username");
-                AllWin[winCount++] = resultSet.getInt("totalWin");
                 // data[countLeaderboard++] = (number++) + ". " + resultSet.getString("Username") + " Score : " + resultSet.getInt("highScore") + "\n";
                 // System.out.println(AllName[5]);
             }
