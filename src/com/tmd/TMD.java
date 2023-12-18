@@ -8,7 +8,7 @@ import javax.swing.SwingUtilities;
 import com.game.Lobby;
 
 public class TMD extends javax.swing.JFrame {
-    GamePanel panel;
+    private GamePanel panel;
     Score score;
     public String pathGame = "src\\Icon\\bgforpong.jpg";
 
